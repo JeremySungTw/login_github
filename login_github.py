@@ -21,7 +21,7 @@ url = 'https://github.com/login'  # 網址
 username = ''  # Username or email address
 password = ''  # Password
 
-set = setting.driv_option()
+set = setting.Driv_option()
 driver = webdriver.Chrome(set.get_chrome_path(), options=set)
 driver.set_window_size(1500, 1020)
 driver.get(url)
@@ -32,8 +32,8 @@ try:
     driver.find_element_by_id('login_field').send_keys(username)
     driver.find_element_by_id('password').send_keys(password)
     driver.find_element_by_css_selector('.btn.btn-primary.btn-block').click()
-    WaitWeb(5, "return document.getElementsByClassName('flash flash-full flash-error')", '顯示帳密錯誤訊息', '查找不到帳密錯誤訊息，進行下一步')
-    WaitWeb(5, "return document.getElementsByClassName('d-flex flex-column flex-lg-row flex-self-stretch flex-lg-self-auto')", '登入成功')
+    waitweb(5, "return document.getElementsByClassName('flash flash-full flash-error')", '顯示帳密錯誤訊息', '查找不到帳密錯誤訊息，進行下一步')
+    waitweb(5, "return document.getElementsByClassName('d-flex flex-column flex-lg-row flex-self-stretch flex-lg-self-auto')", '登入成功')
     driver.quit()
 except:
     print('查找不到[Contact GitHub]的元素，請確認url是否為https://github.com/login')
