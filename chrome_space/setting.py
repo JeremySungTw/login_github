@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 
-class driv_option(webdriver.ChromeOptions):
+class Driv_option(webdriver.ChromeOptions):
     def __init__(self):
         super().__init__()
         # self.add_argument('headless')
@@ -21,6 +21,6 @@ class driv_option(webdriver.ChromeOptions):
 
 
 if __name__ == '__main__':
-    set = driv_option()
+    set = Driv_option()
     driver = webdriver.Chrome(set.get_chrome_path(), options=set)
     driver.quit()

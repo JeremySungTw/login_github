@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 
-def WaitWeb(time_loop, css, success_msg, error_msg='找不到此元素'):
+def waitweb(time_loop, css, success_msg, error_msg='找不到此元素'):
     for _ in range(time_loop):
         css_obj = driver.execute_script(css)
         if css_obj:
