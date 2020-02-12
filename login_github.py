@@ -18,8 +18,8 @@ def waitweb(time_loop, css, success_msg, error_msg='找不到此元素'):
 
 # 參數
 url = 'https://github.com/login'  # 網址
-username = ''  # Username or email address
-password = ''  # Password
+username = 'ZxZx'  # Username or email address
+password = 'ZxZX'  # Password
 
 set = setting.Driv_option()
 driver = webdriver.Chrome(set.get_chrome_path(), options=set)
@@ -34,7 +34,7 @@ try:
     driver.find_element_by_css_selector('.btn.btn-primary.btn-block').click()
     waitweb(5, "return document.getElementsByClassName('flash flash-full flash-error')", '顯示帳密錯誤訊息', '查找不到帳密錯誤訊息，進行下一步')
     waitweb(5, "return document.getElementsByClassName('d-flex flex-column flex-lg-row flex-self-stretch flex-lg-self-auto')", '登入成功')
-    driver.quit()
 except:
     print('查找不到[Contact GitHub]的元素，請確認url是否為https://github.com/login')
-    driver.quit()
+
+driver.quit()
